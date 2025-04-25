@@ -1,0 +1,24 @@
+#spring.application.name=springboot-demo-2
+spring:
+  application:
+    name: springboot-demo-2-yaml
+  profiles:
+    active: prod
+
+---
+
+database:
+  url: localhost://3306/mydb
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+database:
+  url: cloud://3306/mydb
